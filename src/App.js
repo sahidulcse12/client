@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
+import Options from './components/Options/Options';
+import Notifications from './components/Notifications/Notifications';
+import { AppBar, Typography } from '@mui/material';
+
+
+// const imageStyle = {
+//   marginLeft: '15px'
+// }
+
+const appBar = {
+  borderRadius: 15,
+  margin: '30px 100px',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '600px',
+  border: '2px solid black',
+}
+
+const wrapper = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%',
+}
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={wrapper}>
+      <AppBar style={appBar} position="static" color="inherit">
+        <Typography variant="h2" align="center">video chat app</Typography>
+      </AppBar>
+      <VideoPlayer></VideoPlayer>
+      <Options>
+        <Notifications></Notifications>
+      </Options>
     </div>
   );
 }
